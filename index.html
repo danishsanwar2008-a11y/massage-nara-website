@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Massage Nara — Boutique Massage Spa in Sugar Land, TX</title>
+<meta name="description" content="Massage Nara is a boutique massage spa in Sugar Land, TX offering deep tissue, hot stone, aromatherapy, and couples massage in a calm, spa-like setting. Same-day booking. Call (832) 580-7777." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Massage Nara — Boutique Massage Spa in Sugar Land, TX" />
+<meta property="og:description" content="Personalized deep tissue, hot stone & aromatherapy massage in a serene Sugar Land studio. Book your escape today." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --cream:#faf6ef;
+    --cream-2:#f2ebe0;
+    --ink:#2c2a25;
+    --ink-soft:#5a564d;
+    --sage:#4a5a4c;
+    --sage-deep:#37453a;
+    --sage-soft:#8a9a82;
+    --gold:#b08a52;
+    --gold-soft:#c9a875;
+    --line:#e4dccf;
+    --white:#ffffff;
+    --shadow:0 18px 50px -20px rgba(55,69,58,.35);
+    --shadow-sm:0 8px 24px -14px rgba(55,69,58,.4);
+    --radius:20px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.12;color:var(--sage-deep)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(92%,var(--maxw));margin-inline:auto}
+  .eyebrow{
+    font-family:'Jost',sans-serif;font-weight:500;letter-spacing:.32em;
+    text-transform:uppercase;font-size:.72rem;color:var(--gold);
+    display:inline-block;margin-bottom:1rem;
+  }
+  section{padding:clamp(4rem,9vw,7.5rem) 0}
+  .section-head{max-width:640px;margin:0 auto clamp(2.5rem,5vw,4rem);text-align:center}
+  .section-head h2{font-size:clamp(2.4rem,5.5vw,3.6rem);margin-bottom:1rem}
+  .section-head p{color:var(--ink-soft);font-size:1.06rem}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.6rem;
+    font-family:'Jost',sans-serif;font-weight:500;font-size:.86rem;
+    letter-spacing:.12em;text-transform:uppercase;
+    padding:1.05rem 2.1rem;border-radius:100px;cursor:pointer;border:1px solid transparent;
+    transition:transform .35s var(--ease),background .35s var(--ease),color .35s var(--ease),box-shadow .35s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--sage-deep);color:#f6f2ea;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--sage);transform:translateY(-3px)}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-soft);transform:translateY(-3px)}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.14);transform:translateY(-3px)}
+  .btn-outline{background:transparent;border-color:var(--sage);color:var(--sage-deep)}
+  .btn-outline:hover{background:var(--sage-deep);color:#f6f2ea;transform:translateY(-3px)}
+
+  /* ============ HEADER ============ */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);
+    padding:1.4rem 0;
+  }
+  header.scrolled{background:rgba(250,246,239,.92);backdrop-filter:blur(14px);box-shadow:0 6px 30px -20px rgba(0,0,0,.4);padding:.8rem 0}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;flex-direction:column;line-height:1}
+  .brand .name{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;color:#fff;letter-spacing:.02em;transition:color .4s var(--ease)}
+  .brand .tag{font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-soft);margin-top:.25rem}
+  header.scrolled .brand .name{color:var(--sage-deep)}
+  .nav-links{display:flex;align-items:center;gap:2.2rem}
+  .nav-links a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#f3efe7;font-weight:400;position:relative;transition:color .3s}
+  header.scrolled .nav-links a{color:var(--ink-soft)}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-links a:not(.btn):hover{color:var(--gold)}
+  .nav-links .btn{padding:.7rem 1.5rem;font-size:.74rem}
+  header.scrolled .nav-links .btn-ghost{border-color:var(--sage);color:var(--sage-deep)}
+  header.scrolled .nav-links .btn-ghost:hover{background:var(--sage-deep);color:#fff}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:120}
+  .hamburger span{width:26px;height:2px;background:#fff;transition:.35s var(--ease);border-radius:2px}
+  header.scrolled .hamburger span{background:var(--sage-deep)}
+  body.menu-open .hamburger span{background:var(--sage-deep)}
+  body.menu-open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  body.menu-open .hamburger span:nth-child(2){opacity:0}
+  body.menu-open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;min-height:100vh;display:flex;align-items:center;
+    color:#fff;overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img{width:100%;height:100%;object-fit:cover}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background:linear-gradient(105deg,rgba(35,45,38,.82) 0%,rgba(45,58,48,.55) 45%,rgba(55,69,58,.25) 100%);
+  }
+  .hero-inner{max-width:640px;padding:8rem 0 4rem}
+  .hero .eyebrow{color:var(--gold-soft)}
+  .hero h1{font-size:clamp(3rem,7.5vw,5.6rem);color:#fff;margin-bottom:1.5rem;font-weight:500}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p{font-size:1.18rem;color:rgba(255,255,255,.9);max-width:520px;margin-bottom:2.4rem;font-weight:300}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:1rem}
+  .hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.8);font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+  .hero-scroll .line{width:1px;height:44px;background:rgba(255,255,255,.5);animation:scrollpulse 2s infinite}
+  @keyframes scrollpulse{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+  /* ============ TRUST BAR ============ */
+  .trust{background:var(--sage-deep);color:#f1ede4;padding:2.4rem 0}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+  .trust .item{display:flex;flex-direction:column;gap:.3rem;position:relative}
+  .trust .item:not(:last-child)::after{content:"";position:absolute;right:-.75rem;top:15%;height:70%;width:1px;background:rgba(255,255,255,.16)}
+  .trust .num{font-family:'Cormorant Garamond',serif;font-size:2.3rem;color:#fff;line-height:1}
+  .trust .lbl{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft)}
+  .stars{color:var(--gold-soft);letter-spacing:2px;font-size:1.1rem}
+
+  /* ============ ABOUT ============ */
+  .about .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+  .about-media{position:relative}
+  .about-media img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;aspect-ratio:4/5;object-fit:cover}
+  .about-media .badge{
+    position:absolute;bottom:-28px;left:-28px;background:var(--cream);border:1px solid var(--line);
+    border-radius:16px;padding:1.3rem 1.6rem;box-shadow:var(--shadow-sm);text-align:center;
+  }
+  .about-media .badge .b-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);line-height:1}
+  .about-media .badge .b-lbl{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:.2rem}
+  .about-copy h2{font-size:clamp(2.3rem,5vw,3.4rem);margin-bottom:1.4rem}
+  .about-copy p{color:var(--ink-soft);margin-bottom:1.15rem}
+  .about-copy .sign{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--sage);margin-top:1.4rem}
+
+  /* ============ SIGNATURE ============ */
+  .signature{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%)}
+  .sig-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+  .sig-card{
+    background:var(--white);border-radius:var(--radius);overflow:hidden;
+    box-shadow:var(--shadow-sm);border:1px solid var(--line);
+    display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease);
+  }
+  .sig-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .sig-card .img{height:230px;overflow:hidden}
+  .sig-card .img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+  .sig-card:hover .img img{transform:scale(1.07)}
+  .sig-card .body{padding:2rem 2.1rem 2.3rem}
+  .sig-card .kicker{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .sig-card h3{font-size:1.9rem;margin:.5rem 0 .8rem}
+  .sig-card p{color:var(--ink-soft);font-size:.98rem}
+  .sig-tag{display:inline-block;margin-top:1.2rem;font-size:.78rem;letter-spacing:.05em;color:var(--sage);border-top:1px solid var(--line);padding-top:1rem}
+
+  /* ============ SERVICES ============ */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .svc{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:2.2rem 1.9rem;transition:.45s var(--ease);position:relative;overflow:hidden;
+  }
+  .svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-sm);border-color:transparent}
+  .svc:hover::before{transform:scaleX(1)}
+  .svc .icon{width:52px;height:52px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;margin-bottom:1.2rem;color:var(--sage)}
+  .svc .icon svg{width:26px;height:26px}
+  .svc h3{font-size:1.55rem;margin-bottom:.5rem}
+  .svc p{color:var(--ink-soft);font-size:.94rem;margin-bottom:1rem}
+  .svc .meta{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-weight:500}
+  .svc-note{text-align:center;margin-top:2.6rem;color:var(--ink-soft);font-size:.95rem}
+  .svc-note strong{color:var(--sage-deep);font-weight:500}
+
+  /* ============ EXPERIENCE (parallax band) ============ */
+  .experience{position:relative;color:#fff;text-align:center;background:var(--sage-deep)}
+  .experience .bg{position:absolute;inset:0;z-index:0;opacity:.28}
+  .experience .bg img{width:100%;height:100%;object-fit:cover}
+  .experience .wrap{position:relative;z-index:1}
+  .experience h2{color:#fff;font-size:clamp(2.3rem,5vw,3.4rem);margin-bottom:1rem}
+  .experience .lead{max-width:620px;margin:0 auto 3rem;color:rgba(255,255,255,.85)}
+  .exp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+  .exp-item{padding:1.5rem 1rem}
+  .exp-item .n{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold-soft);display:block;margin-bottom:.5rem}
+  .exp-item h4{color:#fff;font-size:1.4rem;margin-bottom:.4rem}
+  .exp-item p{color:rgba(255,255,255,.75);font-size:.9rem}
+
+  /* ============ GUESTS / REVIEWS ============ */
+  .guests{background:var(--cream-2)}
+  .rating-hero{text-align:center;margin-bottom:3rem}
+  .rating-hero .big{font-family:'Cormorant Garamond',serif;font-size:4.5rem;color:var(--sage-deep);line-height:1}
+  .rating-hero .stars{font-size:1.6rem;display:block;margin:.4rem 0}
+  .rating-hero .sub{color:var(--ink-soft);font-size:.9rem;letter-spacing:.05em}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;max-width:720px;margin:1.6rem auto 0}
+  .chip{background:var(--white);border:1px solid var(--line);border-radius:100px;padding:.5rem 1.2rem;font-size:.82rem;color:var(--sage);letter-spacing:.03em}
+  .love-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:1rem}
+  .love{background:var(--white);border-radius:var(--radius);padding:2rem;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .love .q{font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--gold-soft);line-height:.4;height:1rem}
+  .love p{color:var(--ink-soft);margin:1rem 0 1.2rem;font-size:.98rem}
+  .love .who{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);font-weight:500}
+  .love .stars{color:var(--gold);font-size:.9rem;margin-bottom:.3rem}
+
+  /* ============ FAQ ============ */
+  .faq-wrap{max-width:780px;margin:0 auto}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:1.5rem 3rem 1.5rem 0;position:relative;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--sage-deep)}
+  .faq-q::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:1.6rem;color:var(--gold);transition:transform .35s var(--ease);font-family:'Jost',sans-serif;font-weight:300}
+  .faq-item.open .faq-q::after{transform:translateY(-50%) rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .45s var(--ease)}
+  .faq-a p{padding:0 0 1.5rem;color:var(--ink-soft)}
+
+  /* ============ BOOK / CONTACT ============ */
+  .book{background:var(--sage-deep);color:#f1ede4}
+  .book .section-head h2{color:#fff}
+  .book .section-head p{color:rgba(255,255,255,.8)}
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .book-info{background:#f3ede2;color:var(--ink);padding:clamp(2.2rem,4vw,3.4rem)}
+  .book-info h3{font-size:2rem;margin-bottom:.4rem}
+  .book-info .intro{color:var(--ink-soft);margin-bottom:2rem}
+  .info-row{display:flex;gap:1.1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+  .info-row:first-of-type{border-top:0}
+  .info-row .ic{flex:0 0 42px;height:42px;border-radius:50%;background:var(--sage-deep);color:#fff;display:grid;place-items:center}
+  .info-row .ic svg{width:20px;height:20px}
+  .info-row .t{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.15rem}
+  .info-row .d{font-size:1.02rem;color:var(--ink);font-weight:400}
+  .info-row .d a:hover{color:var(--gold)}
+  .hours-list{list-style:none;font-size:.98rem;color:var(--ink-soft)}
+  .hours-list li{display:flex;justify-content:space-between;padding:.2rem 0}
+  .hours-list .day{color:var(--ink)}
+  .book-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .map{min-height:420px}
+  .map iframe{width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.25) contrast(1.05)}
+
+  /* ============ FOOTER ============ */
+  footer{background:#26302a;color:rgba(255,255,255,.7);padding:4rem 0 2rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.5rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand .name{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#fff;font-weight:600}
+  .foot-brand .tag{font-size:.62rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-soft);margin:.3rem 0 1.2rem}
+  .foot-brand p{font-size:.94rem;max-width:340px}
+  footer h4{color:#fff;font-size:1.4rem;margin-bottom:1rem}
+  footer ul{list-style:none}
+  footer ul li{margin-bottom:.6rem}
+  footer ul a{font-size:.92rem;transition:color .3s}
+  footer ul a:hover{color:var(--gold-soft)}
+  .foot-bottom{padding-top:1.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;font-size:.78rem;color:rgba(255,255,255,.5)}
+
+  /* ============ FLOATING + BACK TOP ============ */
+  .mobile-cta{position:fixed;bottom:0;left:0;right:0;z-index:90;display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);box-shadow:0 -6px 24px -12px rgba(0,0,0,.4)}
+  .mobile-cta a{padding:1.05rem;text-align:center;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;display:flex;align-items:center;justify-content:center;gap:.5rem}
+  .mobile-cta .call{background:var(--white);color:var(--sage-deep)}
+  .mobile-cta .book{background:var(--gold);color:#fff}
+  .totop{position:fixed;bottom:2rem;right:2rem;z-index:80;width:48px;height:48px;border-radius:50%;background:var(--sage-deep);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.4s var(--ease);box-shadow:var(--shadow-sm);border:0}
+  .totop.show{opacity:1;visibility:visible;transform:translateY(0)}
+  .totop:hover{background:var(--gold)}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:960px){
+    .about .wrap{grid-template-columns:1fr}
+    .about-media{max-width:440px;margin:0 auto}
+    .book-grid{grid-template-columns:1fr}
+    .map{min-height:340px}
+    .exp-grid{grid-template-columns:1fr 1fr}
+    .trust .wrap{grid-template-columns:1fr 1fr;gap:2rem}
+    .trust .item:nth-child(2)::after{display:none}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:760px){
+    .nav-links{
+      position:fixed;inset:0;background:var(--cream);flex-direction:column;justify-content:center;
+      gap:2rem;transform:translateX(100%);transition:transform .5s var(--ease);
+    }
+    body.menu-open .nav-links{transform:translateX(0)}
+    .nav-links a{color:var(--sage-deep) !important;font-size:1.15rem}
+    header.scrolled .nav-links a{color:var(--sage-deep)}
+    .nav-links .btn{padding:.9rem 2rem;font-size:.8rem}
+    header.scrolled .nav-links .btn-ghost,.nav-links .btn-ghost{border-color:var(--sage);color:var(--sage-deep)}
+    .hamburger{display:flex}
+    .sig-grid,.svc-grid,.love-grid,.chips{grid-template-columns:1fr}
+    .love-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .mobile-cta{display:grid}
+    body{padding-bottom:56px}
+    .totop{bottom:5rem}
+    .exp-grid{grid-template-columns:1fr}
+    .about-media .badge{left:1rem;bottom:-20px}
+  }
+  @media(max-width:520px){
+    .trust .wrap{grid-template-columns:1fr;gap:1.6rem}
+    .trust .item::after{display:none}
+    .hero p{font-size:1.05rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="site-header">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Massage Nara home">
+      <span class="name">Massage&nbsp;Nara</span>
+      <span class="tag">Sugar Land · Est. 2019</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-close">The Studio</a>
+      <a href="#signature" class="nav-close">Signature</a>
+      <a href="#services" class="nav-close">Services</a>
+      <a href="#guests" class="nav-close">Reviews</a>
+      <a href="#book" class="nav-close">Visit</a>
+      <a href="tel:+18325807777" class="btn btn-ghost">Call to Book</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=1920&q=80" alt="Serene spa treatment room with soft candlelight" />
+  </div>
+  <div class="wrap hero-inner reveal in">
+    <span class="eyebrow">Boutique Massage &amp; Wellness · Sugar Land, TX</span>
+    <h1>Where the day melts <em>quietly</em> away.</h1>
+    <p>Step into a calm, unhurried space where every treatment is shaped around you — your pressure, your tension, your pace. This is the pause your body has been asking for.</p>
+    <div class="hero-cta">
+      <a href="tel:+18325807777" class="btn btn-gold">Call (832) 580-7777</a>
+      <a href="#services" class="btn btn-ghost">Explore Treatments</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item">
+      <span class="num">4.5</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <span class="lbl">Rated by guests</span>
+    </div>
+    <div class="item">
+      <span class="num">112+</span>
+      <span class="lbl">Google reviews</span>
+    </div>
+    <div class="item">
+      <span class="num">2019</span>
+      <span class="lbl">Serving Sugar Land</span>
+    </div>
+    <div class="item">
+      <span class="num">Same&nbsp;Day</span>
+      <span class="lbl">Booking welcome</span>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-media reveal">
+      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80" alt="Warm oils and rolled towels in a tranquil spa" />
+      <div class="badge">
+        <div class="b-num">4.5★</div>
+        <div class="b-lbl">Guest Rated</div>
+      </div>
+    </div>
+    <div class="about-copy reveal d1">
+      <span class="eyebrow">The Studio</span>
+      <h2>A quiet retreat, tucked into Parivar Plaza.</h2>
+      <p>Massage Nara was founded on a simple belief: real relaxation isn't rushed, and it isn't one-size-fits-all. From the moment you arrive, soft lighting and gentle music invite your shoulders to drop and your breathing to slow.</p>
+      <p>Our therapists take the time to listen first — where you carry tension, how much pressure feels right, what your body needs today — then tailor every stroke around it. The result is a treatment that feels made for you, in a space kept immaculately clean and calm.</p>
+      <p>Locals have trusted us for years for honest, reasonable pricing and easy, same-day booking. No membership pressure. No upselling. Just genuine, skilled care.</p>
+      <p class="sign">Come as you are. Leave a little lighter.</p>
+      <a href="#services" class="btn btn-outline" style="margin-top:1.4rem">See Our Treatments</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SIGNATURE ================= -->
+<section class="signature" id="signature">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Signature Rituals</span>
+      <h2>Thoughtful care, especially for women.</h2>
+      <p>Two of our most-loved treatments, designed to restore warmth, circulation, and a feeling of lightness that lingers long after you leave.</p>
+    </div>
+    <div class="sig-grid">
+      <article class="sig-card reveal">
+        <div class="img"><img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?auto=format&fit=crop&w=800&q=80" alt="Warm stones and heat therapy on the body" /></div>
+        <div class="body">
+          <span class="kicker">Warmth &amp; Circulation</span>
+          <h3>The Warm Hearth Ritual</h3>
+          <p>A nurturing abdominal and lower-body treatment paired with gentle, natural heat. Slow, warming techniques encourage circulation and ease the cold, heavy feeling that builds up from stress and long, tiring days — leaving you softened and settled from the inside out.</p>
+          <span class="sig-tag">Ideal for cold hands &amp; feet · monthly discomfort · deep tension</span>
+        </div>
+      </article>
+      <article class="sig-card reveal d1">
+        <div class="img"><img src="https://images.unsplash.com/photo-1620733723572-11c53f73a416?auto=format&fit=crop&w=800&q=80" alt="Relaxing neck and shoulder massage" /></div>
+        <div class="body">
+          <span class="kicker">Renewal &amp; Lightness</span>
+          <h3>Lymphatic Lightness Therapy</h3>
+          <p>Made for anyone who sits for long hours or sleeps too little. Fluid, rhythmic movements focus on the neck, shoulders, and underarms to relieve congestion and heaviness, coaxing stagnant tension to release. You'll rise from the table feeling clearer, lighter, and quietly re-energized.</p>
+          <span class="sig-tag">Ideal for desk fatigue · poor sleep · sluggish, tired energy</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2>Treatments tailored to you.</h2>
+      <p>Every session begins with a short conversation, so your therapist can adjust pressure and technique to exactly what your body needs.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.35-9.5-8.5C.9 9.6 2.3 6 5.5 6 7.5 6 9 7.5 12 10.5 15 7.5 16.5 6 18.5 6 21.7 6 23.1 9.6 21.5 12.5 19 16.65 12 21 12 21z"/></svg>
+        </div>
+        <h3>Deep Tissue Massage</h3>
+        <p>Firm, focused work that reaches the deeper layers of muscle to release chronic knots, stiffness, and stubborn tension. Pressure dialed precisely to your comfort.</p>
+        <span class="meta">60 &amp; 90 minutes</span>
+      </div>
+      <div class="svc reveal d1">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="16" rx="8" ry="4"/><ellipse cx="12" cy="12" rx="6" ry="3"/><ellipse cx="12" cy="8.5" rx="4" ry="2"/></svg>
+        </div>
+        <h3>Hot Stone Therapy</h3>
+        <p>Smooth, warmed stones glide over the body to melt tension and soothe tired muscles. A comforting, deeply grounding heat that quiets both body and mind.</p>
+        <span class="meta">A guest favorite</span>
+      </div>
+      <div class="svc reveal d2">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3c2.5 3 4 5.5 4 8a4 4 0 1 1-8 0c0-2.5 1.5-5 4-8z"/><path d="M12 15v6"/></svg>
+        </div>
+        <h3>Aromatherapy &amp; Oils</h3>
+        <p>Naturally scented essential oils layered into your massage to calm the senses and elevate relaxation. Choose the blend that speaks to your mood today.</p>
+        <span class="meta">Add to any service</span>
+      </div>
+      <div class="svc reveal">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M13 20c0-3 2.2-5 5-5s3 1 3 1"/></svg>
+        </div>
+        <h3>Couples Massage</h3>
+        <p>Unwind together in our side-by-side treatment room. A shared hour of calm — perfect for date nights, anniversaries, or simply slowing down with someone you love.</p>
+        <span class="meta">Private room for two</span>
+      </div>
+      <div class="svc reveal d1">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c2-1 4-1 6 0M4 14c0 4 3.5 6 8 6s8-2 8-6"/><path d="M6 10c1.5-1 3-1 4.5 0M14 10c1.5-1 3-1 4.5 0"/><path d="M8 6c1-.7 2-.7 3 0M13 6c1-.7 2-.7 3 0"/></svg>
+        </div>
+        <h3>Relaxation Massage</h3>
+        <p>Long, flowing strokes and a lighter touch to ease everyday stress and gently reset your nervous system. Pure, restful calm from start to finish.</p>
+        <span class="meta">60 &amp; 90 minutes</span>
+      </div>
+      <div class="svc reveal d2">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 12l4-2M12 12l-3 3"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Targeted Relief</h3>
+        <p>Focused attention on the neck, shoulders, and back — where the day tends to settle. Ideal when one specific area needs a little extra care.</p>
+        <span class="meta">Add-on or standalone</span>
+      </div>
+    </div>
+    <p class="svc-note reveal">Prefer to keep it simple? <strong>Call us and we'll help you choose.</strong> Pricing is honest and reasonable — reach out for current rates, durations &amp; seasonal packages.</p>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="experience">
+  <div class="bg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1920&q=80" alt="" /></div>
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:2.4rem">
+      <span class="eyebrow" style="color:var(--gold-soft)">The Nara Difference</span>
+      <h2>Small details. Deeply felt.</h2>
+      <p class="lead">It's the little things that turn a massage into a genuine escape — and we've thought about all of them.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item reveal">
+        <span class="n">01</span>
+        <h4>Personalized Every Time</h4>
+        <p>Your therapist adapts pressure and technique to you — never a scripted routine.</p>
+      </div>
+      <div class="exp-item reveal d1">
+        <span class="n">02</span>
+        <h4>Immaculately Clean</h4>
+        <p>Fresh linens and a spotless, serene space guests consistently praise.</p>
+      </div>
+      <div class="exp-item reveal d2">
+        <span class="n">03</span>
+        <h4>Calm Atmosphere</h4>
+        <p>Soft lighting, soothing sound, and unhurried care from the moment you arrive.</p>
+      </div>
+      <div class="exp-item reveal d3">
+        <span class="n">04</span>
+        <h4>Easy to Book</h4>
+        <p>Reasonable pricing and same-day appointments — often just a phone call away.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GUESTS ================= -->
+<section class="guests" id="guests">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Loved Locally</span>
+      <h2>What guests keep coming back for.</h2>
+    </div>
+    <div class="rating-hero reveal">
+      <div class="big">4.5</div>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <div class="sub">Averaged across 112+ Google reviews</div>
+      <div class="chips">
+        <span class="chip">Skilled therapists</span>
+        <span class="chip">Relaxing atmosphere</span>
+        <span class="chip">Great service</span>
+        <span class="chip">Clean &amp; welcoming</span>
+        <span class="chip">Aromatherapy add-ons</span>
+        <span class="chip">Easy to book</span>
+        <span class="chip">Reasonable pricing</span>
+        <span class="chip">Hot stones</span>
+      </div>
+    </div>
+    <div class="love-grid">
+      <div class="love reveal">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <div class="q" aria-hidden="true">&ldquo;</div>
+        <p>Guests tell us the pressure was <em>exactly</em> right — sore shoulders and a heavy head walked in, and calm walked out. That tailored touch is the heart of what we do.</p>
+        <span class="who">On personalized care</span>
+      </div>
+      <div class="love reveal d1">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <div class="q" aria-hidden="true">&ldquo;</div>
+        <p>A clean, welcoming studio, a warm drink to settle in, and a genuinely relaxing hour. Visitors mention how easy it is to book and how at-ease they feel here.</p>
+        <span class="who">On the atmosphere</span>
+      </div>
+      <div class="love reveal d2">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <div class="q" aria-hidden="true">&ldquo;</div>
+        <p>Complimentary aromatherapy, thoughtful little touches, and fair pricing come up again and again. It's the kind of place guests are glad they found.</p>
+        <span class="who">On the little extras</span>
+      </div>
+    </div>
+    <p class="svc-note reveal" style="margin-top:2.6rem">Themes drawn from our guests' Google reviews. <strong>We'd be honored to earn yours next.</strong></p>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Before your visit.</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item">
+        <button class="faq-q">How do I book an appointment?</button>
+        <div class="faq-a"><p>The quickest way is to call us at <a href="tel:+18325807777" style="color:var(--gold)">(832) 580-7777</a>. We happily welcome same-day appointments whenever our schedule allows, so don't hesitate to reach out even on short notice.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if I'm not sure which massage to choose?</button>
+        <div class="faq-a"><p>That's completely normal — and it's why every session starts with a brief chat. Tell us where you're holding tension and how much pressure you like, and we'll guide you to the right treatment and adjust as we go.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do you offer massages for couples?</button>
+        <div class="faq-a"><p>Yes. Our private side-by-side room lets two guests relax together at the same time — a lovely choice for date nights, anniversaries, or a shared moment of calm. Let us know when you call so we can reserve the room.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I add aromatherapy or hot stones?</button>
+        <div class="faq-a"><p>Absolutely. Aromatherapy oils and warm-stone work are among our most-loved enhancements and can be layered into most treatments. Just ask when you book or when you arrive.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where are you located, and is there parking?</button>
+        <div class="faq-a"><p>You'll find us at 18717 University Blvd #185, Sugar Land, TX 77479, on the first floor of Parivar Plaza. There's convenient plaza parking right out front.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOK / CONTACT ================= -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Visit Massage Nara</span>
+      <h2>Your calm is one call away.</h2>
+      <p>We'd love to welcome you. Reach out to book your treatment or ask us anything.</p>
+    </div>
+    <div class="book-grid reveal">
+      <div class="book-info">
+        <h3>Reserve your escape</h3>
+        <p class="intro">Call us to book — same-day appointments are welcome whenever we have space.</p>
+
+        <div class="info-row">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div>
+            <div class="t">Call to Book</div>
+            <div class="d"><a href="tel:+18325807777">(832) 580-7777</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="t">Find Us</div>
+            <div class="d"><a href="https://www.google.com/maps/search/?api=1&query=Massage+Nara+18717+University+Blvd+185+Sugar+Land+TX+77479" target="_blank" rel="noopener">18717 University Blvd #185<br>Sugar Land, TX 77479 · Parivar Plaza</a></div>
+          </div>
+        </div>
+
+        <div class="info-row">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div style="flex:1">
+            <div class="t">Hours</div>
+            <ul class="hours-list">
+              <li><span class="day">Monday – Saturday</span><span>10:00 AM – 7:30 PM</span></li>
+              <li><span class="day">Sunday</span><span>By appointment</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="book-cta">
+          <a href="tel:+18325807777" class="btn btn-primary">Call Now</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Massage+Nara+18717+University+Blvd+185+Sugar+Land+TX+77479" target="_blank" rel="noopener" class="btn btn-outline">Get Directions</a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe
+          title="Map to Massage Nara, Sugar Land"
+          src="https://maps.google.com/maps?q=18717%20University%20Blvd%20%23185%20Sugar%20Land%20TX%2077479&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">Massage Nara</div>
+        <div class="tag">Sugar Land · Est. 2019</div>
+        <p>A boutique massage spa devoted to personalized, unhurried care — helping our neighbors in Sugar Land feel a little lighter, one visit at a time.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">The Studio</a></li>
+          <li><a href="#signature">Signature Rituals</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#guests">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="tel:+18325807777">(832) 580-7777</a></li>
+          <li><a href="https://www.google.com/maps/search/?api=1&query=Massage+Nara+18717+University+Blvd+185+Sugar+Land+TX+77479" target="_blank" rel="noopener">18717 University Blvd #185</a></li>
+          <li>Sugar Land, TX 77479</li>
+          <li>Mon–Sat · 10:00 AM – 7:30 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Massage Nara. All rights reserved.</span>
+      <span>Boutique Massage &amp; Wellness · Sugar Land, Texas</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MOBILE CTA + BACK TOP ================= -->
+<div class="mobile-cta">
+  <a href="tel:+18325807777" class="call">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Call
+  </a>
+  <a href="#book" class="book">Book a Visit</a>
+</div>
+
+<button class="totop" id="totop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Header scroll state
+  const header = document.getElementById('site-header');
+  const totop = document.getElementById('totop');
+  const onScroll = () => {
+    const y = window.scrollY;
+    header.classList.toggle('scrolled', y > 40);
+    totop.classList.toggle('show', y > 600);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const closeMenu = () => { document.body.classList.remove('menu-open'); hamburger.setAttribute('aria-expanded','false'); };
+  hamburger.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.nav-close').forEach(a => a.addEventListener('click', closeMenu));
+
+  // Back to top
+  totop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const a = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
